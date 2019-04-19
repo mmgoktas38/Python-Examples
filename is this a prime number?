@@ -1,0 +1,23 @@
+# Girilen sayının asalmı değilmi olduğunu buluyor fonksiyon yardımı ile.
+def isprime(number):
+    if (number == 2):  # 2 sayısını asal kısmına ekle
+        print("Prime number.")
+    if(number==1 or number==0):
+        print("It isn't a prime number.")
+
+    for i in range(2,number):
+        if(number%i==0):
+            print("It isn't a prime number.")
+            break
+        else:
+            if(i==number-1):
+                print("Prime number.")
+                break
+while True:
+    yournumber=input("Enter a number:")
+    if(yournumber=="q"):
+        print("Exiting the program...")
+        break
+    else:
+        yournumber = int(yournumber)
+        isprime(yournumber)
