@@ -1,0 +1,39 @@
+# sayı tahmin etme oyunu
+import random    # random modülü içerisindeki randint fonksiyonu pc de rastgele sayı oluşturuyor bellekte senin girdiğin aralıkta
+import time     # time modülündeki sleep fonksiyonu ne kadar süre dersen o kadar kodun çalışmasını durduruyor :)
+print("""****************
+
+GUESS A NUMBER GAME
+
+*****************""")
+print(" (1-40) GUESS A NUMBER ")
+
+rnd_number=random.randint(1,40)
+prediction=5
+print("You have 4 predictions!!!")
+while True:
+        number=int(input("Guess:"))
+        print("Queries information...")
+        time.sleep(1)
+        if(number<rnd_number):
+            prediction-=1
+            if (prediction == 1):
+                print("Your guesses is over but we give you last chance, good luck :)")
+            if (prediction == 0):
+                print("Your guesses is over. Number is:", rnd_number)
+                break
+            print("Higher guess:")
+        elif (number > rnd_number):
+            prediction -= 1
+            if (prediction == 1):
+                print("Your guesses is over but we give you last chance, good luck  :)")
+            if (prediction == 0):
+                print("Your guesses is over. Number is:", rnd_number)
+                break
+            print("Lower guess:")
+        else:
+            print("Congratulations good guess! Number is:",rnd_number)
+            break
+        #if(tahmin_hakki==0):
+         #   print("Tahmin hakkınız bitmiştir. Sayımız:",rastgele_sayi)
+          #  break
